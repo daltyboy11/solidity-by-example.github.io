@@ -183,6 +183,11 @@ const SOL_ROUTES: Route[] = [
     path: "signature",
     title: "Verifying Signature",
   },
+  // misc
+  {
+    path: "gas-golf",
+    title: "Gas Saving Techniques",
+  },
 ]
 
 const APP_ROUTES: Route[] = [
@@ -420,9 +425,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/04/05 - Gas saving tips",
   "2022/03/18 - ABI decode",
   "2022/03/14 - Github PR by WorldDogs",
-  "2022/03/11 - Github PR by devanonon",
 ]
 
 export default function HomePage() {
