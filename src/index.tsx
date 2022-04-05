@@ -1,25 +1,27 @@
 import React from "react"
-import { hydrate, render } from "react-dom"
+import { hydrate } from "react-dom"
+import { createRoot } from "react-dom/client"
 import "./index.css"
 import { Provider as AppContextProvider } from "./contexts/AppContext"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 
-const rootElement = document.getElementById("root")
+const container = document.getElementById("root")
 // @ts-ignore
-if (rootElement.hasChildNodes()) {
+if (container.hasChildNodes()) {
   hydrate(
     <AppContextProvider>
       <App />
     </AppContextProvider>,
-    rootElement
+    container
   )
 } else {
-  render(
+  // @ts-ignore
+  const root = createRoot(container)
+  root.render(
     <AppContextProvider>
       <App />
-    </AppContextProvider>,
-    rootElement
+    </AppContextProvider>
   )
 }
 
