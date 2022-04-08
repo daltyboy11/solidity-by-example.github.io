@@ -7,6 +7,8 @@ contract ArrayReplaceFromEnd {
     // Deleting an element creates a gap in the array.
     // One trick to keep the array compact is to
     // move the last element into the place to delete.
+    // This is a useful technique when we don't care
+    // about the ordering of the elements.
     function remove(uint index) public {
         // Move the last element into the place to delete
         arr[index] = arr[arr.length - 1];
